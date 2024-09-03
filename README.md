@@ -8,4 +8,4 @@ bundle install
 ```bash
 ruby app.rb
 ```
-3) Profiter de l'app dans localhost:4567 :)
+3) Profiter de l'app dans **localhost:4567** :)
