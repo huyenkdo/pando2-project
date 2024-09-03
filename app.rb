@@ -11,7 +11,5 @@ get "/" do
   @voct_measurements = @measurements.select { |m| m.measure_type == 'VOCT' }
   @room_names_fr = @measurements.map { |m| m.room_name.sub('Room', 'Salle') }.uniq
   @types = @measurements.map(&:measure_type).uniq
-
-  @test = @measurements.first.timestamp.class
   erb :home
 end

@@ -71,26 +71,8 @@ window.onload = function() {
         legend.classList.remove('d-none')
       })
     } else {
-      room1Data.forEach(chart => {
-        chart.setAttribute('visibility', '')
-      })
-      room2Data.forEach(chart => {
-        chart.setAttribute('visibility', '')
-      })
-      room3Data.forEach(chart => {
-        chart.setAttribute('visibility', '')
-      })
-      room1Legend.forEach(legend => {
-        legend.classList.remove('d-none')
-      })
-      room2Legend.forEach(legend => {
-        legend.classList.remove('d-none')
-      })
-      room3Legend.forEach(legend => {
-        legend.classList.remove('d-none')
-      })
+      showAllRooms()
     }
-    console.log(roomFilter.value)
   })
 
   paramsFilter.addEventListener('change', (event) => {
@@ -115,10 +97,35 @@ window.onload = function() {
       humChart.classList.add('d-none')
       voctChart.classList.remove('d-none')
     } else {
-      co2Chart.classList.remove('d-none')
-      tmpChart.classList.remove('d-none')
-      humChart.classList.remove('d-none')
-      voctChart.classList.remove('d-none')
+      showAllParams()
     }
   })
+
+  function showAllRooms() {
+    room1Data.forEach(chart => {
+      chart.setAttribute('visibility', '')
+    })
+    room2Data.forEach(chart => {
+      chart.setAttribute('visibility', '')
+    })
+    room3Data.forEach(chart => {
+      chart.setAttribute('visibility', '')
+    })
+    room1Legend.forEach(legend => {
+      legend.classList.remove('d-none')
+    })
+    room2Legend.forEach(legend => {
+      legend.classList.remove('d-none')
+    })
+    room3Legend.forEach(legend => {
+      legend.classList.remove('d-none')
+    })
+  }
+
+  function showAllParams() {
+    co2Chart.classList.remove('d-none')
+    tmpChart.classList.remove('d-none')
+    humChart.classList.remove('d-none')
+    voctChart.classList.remove('d-none')
+  }
 };
